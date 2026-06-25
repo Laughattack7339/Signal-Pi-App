@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pi Controller</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="manifest.json">
+    </head>
+    <body>
+        <button onclick="playDoorbell()">Play Doorbell</button>
+        
+        
+
+        <script>
+            function playDoorbell() {
+                fetch("http://100.66.47.82:5000/play_doorbell?token=l725M284L")
+            }
+        </script>
+    </body>
+</html>
+
+
