@@ -4,6 +4,7 @@
         <title>Pi Controller</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="manifest" href="manifest.json">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
 
 
@@ -14,22 +15,97 @@
                 justify-content: center;
                 align-items: center;
                 height: 100vh;
+                font-family: 'Poppins', sans-serif;
+                color: white;
             }
 
             button {
                 padding: 20px;
                 font-size: 30px;
+                background-color: #254f1e;
+                color: white;
+                border-radius: 10px;
+                margin: 20px;
+            }
+
+            #home, #sounds, #robot, #intro {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+
+            h1 {
+                text-align: center;
+                margin-bottom: 100px;
             }
         </style>
     </head>
     <body>
-        <button onclick="playDoorbell()">Play Doorbell</button>
+
+        <div id="home">
+            <h1>
+                Choose a Mode
+            </h1>
+            
+            <button onclick="showPage('sounds')">Sounds</button>
+            <button onclick="showPage('robot')">Robot Mode</button>
+            <button onclick="showPage('intro')">Room Watch</button>
+
+
+            
+        </div>
+
+        <div id="sounds" style="display: none;">
+            <h1>
+                Play Sounds
+            </h1>
+
+            <button onclick="showPage('home')">Back</button>
+
+
+        </div>
+
+        <div id="robot" style="display: none;">
+            <h1>
+                Robot Mode
+            </h1>
+
+            <button onclick="showPage('home')">Back</button>
+        </div>
+
+        <div id="intro" style="display: none;">
+            <h1>
+                Room wacther on/off
+            </h1>
+
+            <button onclick="showPage('home')">Back</button>
+        </div>
         
         
 
         <script>
             function playDoorbell() {
                 fetch("http://100.66.47.82:5000/play_doorbell?token=l725M284L")
+            }
+
+            function showPage(page) {
+                console.log(page)
+                
+                document.getElementById("sounds").style.display = "none"
+                document.getElementById("robot").style.display = "none"
+                document.getElementById("intro").style.display = "none"
+                document.getElementById("home").style.display = "none" 
+
+                if (page == "sounds") {
+                    document.getElementById("sounds").style.display = "block"
+                } else if (page == "robot") {
+                    document.getElementById("robot").style.display = "block"
+                } else if (page == "intro") {
+                    document.getElementById("intro").style.display = "block"
+                } else if (page == "home") {
+                    document.getElementById("home").style.display = "block"
+                }
             }
         </script>
     </body>
