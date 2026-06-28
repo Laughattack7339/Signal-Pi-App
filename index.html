@@ -95,13 +95,13 @@
 
             <div class="dpad-grid">
                 <div></div>
-                <button class="dpad" onclick="console.log('up')">UP</button>
+                <button class="dpad" onclick="forward()">FORWARD</button>
                 <div></div>
-                <button class="dpad" onclick="console.log('left')">LEFT</button>
-                <button class="dpad" onclick="console.log('STOOOOOOOP I COMMAND IT STOP IN YOUR TRACKS RIGHT NOW OR I WILL HAVE YOUR HEAD ON A PIKE BY THE END OF THE HOUR')">STOP</button>
-                <button class="dpad" onclick="console.log('right')">RIGHT</button>
+                <button class="dpad" onclick="left()">LEFT</button>
+                <button class="dpad" onclick="stopit()">STOP</button>
+                <button class="dpad" onclick="right()">RIGHT</button>
                 <div></div>
-                <button class="dpad" onclick="console.log('down')">DOWN</button>
+                <button class="dpad" onclick="backward()">BACK</button>
                 <div></div>
             </div>
             
@@ -121,6 +121,26 @@
         <script>
             function playDoorbell() {
                 fetch("http://100.66.47.82:5000/play_doorbell?token=l725M284L")
+            }
+
+            function forward() {
+                fetch("http://100.66.47.82:5000/forward?token=l725M284L")
+            }
+            
+            function backward() {
+                fetch("http://100.66.47.82:5000/backward?token=l725M284L")
+            }
+
+            function left() {
+                fetch("http://100.66.47.82:5000/left?token=l725M284L")
+            }
+
+            function right() {
+                fetch("http://100.66.47.82:5000/right?token=l725M284L")
+            }
+
+            function stopit() {
+                fetch("http://100.66.47.82:5000/stop?token=l725M284L")
             }
 
             function showPage(page) {
