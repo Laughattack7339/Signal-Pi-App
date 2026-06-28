@@ -46,6 +46,18 @@
                 top: 20px;
                 left: 20px;
             }
+
+            .dpad-grid {
+                display: grid;
+                grid-template-columns:repeat(3, 80px);
+                grid-template-rows: repeat(3, 80px);
+                gap: 150px;
+            }
+
+            .dpad {
+                height: 100px;
+            }
+
         </style>
     </head>
     <body>
@@ -78,8 +90,21 @@
         <div id="robot" style="display: none;">
             <h1>
                 Robot Mode
+            
             </h1>
 
+            <div class="dpad-grid">
+                <div></div>
+                <button class="dpad" onclick="console.log('up')">UP</button>
+                <div></div>
+                <button class="dpad" onclick="console.log('left')">LEFT</button>
+                <button class="dpad" onclick="console.log('STOOOOOOOP I COMMAND IT STOP IN YOUR TRACKS RIGHT NOW OR I WILL HAVE YOUR HEAD ON A PIKE BY THE END OF THE HOUR')">STOP</button>
+                <button class="dpad" onclick="console.log('right')">RIGHT</button>
+                <div></div>
+                <button class="dpad" onclick="console.log('down')">DOWN</button>
+                <div></div>
+            </div>
+            
             <button class="back-btn" onclick="showPage('home')">Back</button>
         </div>
 
