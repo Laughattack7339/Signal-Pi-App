@@ -40,6 +40,7 @@ def play_doorbell():
 def forward():
     if check_token(request.args.get("token")):
         print("forward")
+        pygame.mixer.Sound("forward.wav").play()
 
         return ('Done', 200)
     else:
@@ -50,6 +51,7 @@ def forward():
 def backward():
     if check_token(request.args.get("token")):
         print("backward")
+        pygame.mixer.Sound("backward.wav").play()
 
         return ('Done', 200)
     else:
@@ -61,7 +63,7 @@ def backward():
 def left():
     if check_token(request.args.get("token")):
         print("left")
-
+        pygame.mixer.Sound("left.wav").play()
         return ('Done', 200)
     else:
         return("PI checked it and its not the right token resumbit your token guess to args", 403)
@@ -72,7 +74,7 @@ def left():
 def right():
     if check_token(request.args.get("token")):
         print("right")
-
+        pygame.mixer.Sound("right.wav").play()
         return ('Done', 200)
     else:
         return("PI checked it and its not the right token resumbit your token guess to args", 403)
@@ -82,6 +84,7 @@ def right():
 def stop():
     if check_token(request.args.get("token")):
         print("stop")
+        pygame.mixer.Sound("stop.wav").play()
 
         return ('Done', 200)
     else:
