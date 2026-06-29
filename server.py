@@ -32,8 +32,41 @@ def play_doorbell():
         return ('Done', 200)
     else:
         return("PI checked it and its not the right token resumbit your token guess to args", 403)
-    
 
+
+
+@app.route('/kaleb_hello')
+
+def kaleb_hello():
+    if check_token(request.args.get("token")):
+        print("kaleb_hello")
+        pygame.mixer.Sound("kaleb_hello.wav").play()
+
+        return ('Done', 200)
+    else:
+        return("PI checked it and its not the right token resumbit your token guess to args", 403)
+    
+@app.route('/kaleb_penis')
+
+def kaleb_penis():
+    if check_token(request.args.get("token")):
+        print("kaleb_penis")
+        pygame.mixer.Sound("kaleb_penis.wav").play()
+
+        return ('Done', 200)
+    else:
+        return("PI checked it and its not the right token resumbit your token guess to args", 403)
+    
+@app.route('/kaleb_brainrot')
+
+def kaleb_brainrot():
+    if check_token(request.args.get("token")):
+        print("kaleb_brainrot")
+        pygame.mixer.Sound("kaleb_brainrot.wav").play()
+
+        return ('Done', 200)
+    else:
+        return("PI checked it and its not the right token resumbit your token guess to args", 403)
 
 @app.route('/forward')
 
